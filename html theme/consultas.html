@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Elite Clinico Web</title>
+    <!-- Custom CSS -->
+    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/basictable.css" />
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
+	<link rel="stylesheet" href="css/richtext.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/printer.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-brand">
+                        <a href="index.html" class="logo">
+                            <!-- Logo icon -->
+                            <b class="logo-icon">
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <span class="logo-text">
+                                <!-- dark Logo text -->
+                                <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo text -->
+                                <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            </span>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti-more"></i>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                                <i class="mdi mdi-av-timer"></i>
+                                <span class="hide-menu">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pacientes.html" aria-expanded="false">
+                                <i class="mdi mdi-account-network"></i>
+                                <span class="hide-menu">Pacientes</span>
+                            </a>
+                        </li>
+                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="consultas.html" aria-expanded="false">
+                                <i class="mdi mdi-arrange-bring-forward"></i>
+                                <span class="hide-menu">Consultas</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="usuarios.html" aria-expanded="false">
+                                <i class="mdi mdi-face"></i>
+                                <span class="hide-menu">Usuarios</span>
+                            </a>
+                        </li>
+						<li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="configuraciones.html" aria-expanded="false">
+                                <i class="mdi mdi-image-filter-vintage"></i>
+                                <span class="hide-menu">Configuraciones</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-5 align-self-center">
+                        <h4 class="page-title">Consultas</h4>
+                    </div>
+                    <div class="col-7 align-self-center">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Inicio</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Consultas</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+			<!-- ============================================================== -->
+			<!-- Email campaign chart -->
+			<!-- ============================================================== -->
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-body">
+							<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#formcollapse" aria-expanded="false" aria-controls="formcollapse">Crear consulta</button>
+							
+							<div class="collapse" id="formcollapse" style="padding:20px; background-color:#f2f4f5; margin:10px 0;">
+								<h4 class="card-title">Crear un paciente</h4>
+								<h5 class="card-subtitle">Rellena el formulario para crear un nuevo paciente.</h5>
+								<form class="form-horizontal m-t-30 row">
+									<div class="col-xs-12 col-sm-12 col-md-12">
+										<div class="form-group">
+											<label>Paciente</label>
+											<select class="custom-select col-12" id="inlineFormCustomSelect">
+												<option selected>Seleccionar...</option>
+												<option value="1">Luis Anaya</option>
+												<option value="2">Juan Perez</option>
+												<option value="3">Alberto Anaya</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12">
+										<div class="form-group">
+											<label>Consulta</label>
+											<textarea class="form-control richeditor" rows="5" placeholder=""></textarea>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12">
+										<div class="form-group">
+											<label>Archivos extra</label>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Subir</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="inputGroupFile01">
+													<label class="custom-file-label" for="inputGroupFile01">Seleccionar</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-6">
+										<div class="form-group">
+											<button class="btn btn-primary">Guardar datos</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							
+							<div class="table-responsive">
+									<table class="table tablebusqueda table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Titulo</th>
+                                            <th class="border-top-0">Paciente</th>
+                                            <th class="border-top-0">Fecha de registro</th>
+											<th class="border-top-0">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+											<td>Consulta Abc </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo">
+												<a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a data-toggle="popover" data-container="body" data-placement="bottom" type="button" data-html="true" href="#" id="delete0" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> 
+												<div id="popover-content-delete0" class="hide">
+													<p>¿Está seguro de eliminar la consulta Consulta" Abc"?</p>
+													<a href="" class="btn btn-danger">Si, eliminar</a>
+												</div>
+											</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Consulta SDFD </td>
+                                            <td class="txt-oflo">Juan Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta ETE </td>
+                                            <td class="txt-oflo">Ricardo Sans</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta DVC </td>
+                                            <td class="txt-oflo">Juan Perez</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta JJJ </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta ERTR </td>
+                                            <td class="txt-oflo">Juan Perea</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta IOU </td>
+                                            <td class="txt-oflo">Julio Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Consulta SXA </td>
+                                            <td class="txt-oflo">Pablo Marmol</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta SCSC </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta WRF </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta CDDF </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+										<tr>
+                                            <td>Consulta DSFD </td>
+                                            <td class="txt-oflo">Luis Anaya</td>
+                                            <td><span class="font-medium">15/09/2018</span></td>
+											<td class="txt-oflo"><a href="#" class="btn btn-default"><i class="mdi mdi-eye-outline"></i></a> <a href="#" class="btn btn-danger"><i class="mdi mdi-delete"></i></a> <a href="#" class="btn btn-success"><i class="mdi mdi-account-edit"></i></a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+               
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                Todos los derechos reservados. Desarrollado por
+                <a href="http://laeliteweb.com">La Élite Web</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+	<script src="js/jquery.basictable.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
+	<script src="js/jquery.richtext.min.js"></script>
+	<script src="js/bootstrap3-typeahead.min.js"></script>
+	<script src="js/init.js"></script>
+</body>
+
+</html>

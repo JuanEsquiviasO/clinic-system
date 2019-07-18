@@ -1,0 +1,20 @@
+@media print {
+	@page {margin: 1.5cm; overflow:hidden; size: A4;}
+	@page {
+        @top-center {content: element(header);}
+        @bottom-center {content: element(footer);}
+    }
+	body {margin: 1cm 0cm; text-align: justify; overflow:hidden;}
+	p {font-size:12pt; font-family: "Roboto Condensed", Arial, sans-serif; line-height:1.6em; margin:1px 1px 15px 1px; text-align:justify; color:#403f3f;}
+	h1 {font-size:17pt; font-family:font-family: Economica, sans-serif; line-height:2.0em; margin-bottom:10px; color:#403f3f;}
+	h2 {font-size:15pt; font-family:font-family: Economica, sans-serif; line-height:1.8em; margin-bottom:10px; color:#403f3f;}
+	.tabla {font-size:10pt; font-family: "Roboto Condensed", Arial, sans-serif; line-height:1.5em; width:100%;}
+	.tabla th {background-color:#435b9a!important; color:#fff; padding:10px 4px; text-align:center;}
+	.tabla td {padding:3px; color:#444; line-height:16px;}
+	.tabla tr:nth-child(odd) {background:#e9eaed}
+	.btn.boton {display:none;}
+	header.topbar, aside.left-sidebar, .page-breadcrumb .breadcrumb, .print, .footer, title {display:none!important;}
+	#main-wrapper[data-layout="vertical"][data-sidebartype="full"] .page-wrapper {margin:0; width:100%;}
+	img {max-height:300px;}
+	table.paciente thead th:first-child {width:25%;}
+}
