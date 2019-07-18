@@ -1,6 +1,12 @@
 <?php
-get_header($name);
+get_header();
 
-get_footer($name);
+if ( have_posts() ) {
+	while ( have_posts () ) {
+		the_post();
+		the_content();
+	}
+}
 
+get_footer();
 ?>

@@ -21,6 +21,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.richtext.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap3-typeahead.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/init.js"></script>
+	<?php wp_footer(); ?>
 </body>
 
 </html>
