@@ -101,9 +101,9 @@ function get_all_users() {
 	foreach ( $users as $user ) {
 		if ( $user->roles[0] == 'administrator' ) {
 			$rol = 'Administrador';
-		} else if( $user->role[0] == 'secretaria'  ) {
+		} else if( $user->role[0] == 'secretaria' ) {
 			$rol = 'Secretaria';
-		} else if( $user->role[0] == 'contributor'  ) {
+		} else if( $user->role[0] == 'contributor' ) {
 			$rol = 'Colaborador';
 		} else {
 			$rol = 'Otro tipo de usuario';
@@ -112,15 +112,78 @@ function get_all_users() {
 		$nombre = get_user_meta( $user->ID, 'first_name', true );
 		$apellido = get_user_meta( $user->ID, 'last_name', true );
 
-		$usuario() = array(
+		$usuario[] = array(
 			'id' => $user->ID,
-			'nombre' => $nombre.''.$apellido,
+			'nombre' => $nombre.' '.$apellido,
 			'email' => $user->data->user_email,
 			'rol' => $rol
 		);
 	}
 
 	return $usuarios;
+}
+
+function get_conunt_users() {
+	$users = get_all_users();
+	return count($users);
+}
+
+/* Patients */
+function get_pacientes( $limit = -1 ) {
+	$args = array(
+		'post_type' => 'pacientes',
+		'post_status' => 'publish',
+		'posts_per_page' => $limit
+	);
+
+	$query = new WP_Query( $args );
+	$pacientes = array();
+	if ( $query->have_posts() ) {
+		while( $query->have_posts() ) {
+			$query->the_post();
+			global $post;
+
+			$nombre = get_post_meta( $post->ID, 'nombres', true );
+			$apellidos = get_post_meta( $post->ID, 'apellidos', true );
+			$dni = get_post_meta( $post->ID, 'documento de identidad ', true );
+			$fechanac = get_post_meta( $post->ID, 'fecha de nacimiento', true );
+			$direccion = get_post_meta( $post->ID, 'direccion', true );
+			$telefono = get_post_meta( $post->ID, 'telefono', true );
+			$fotografia = get_post_meta( $post->ID, 'fotografias', true );
+			$foto = ( is_numeric($fotografia) && $fotografia > 0 ) ? wp_get_attachment_url($fotografia) : '';
+			$otros = get_post_meta( $post->ID, 'otros datos', true );
+			$fecha = get_the_date( 'd/m/y', $post->ID );
+			$estatus = wp_get_post_terms( $post->ID, 'estatus', array('fields' => 'all') );
+			$referencia = wp_get_post_terms( $post->ID, 'referencias', array('fields' => 'all') );
+
+			$pacientes[] = array(
+				'ID' => $post->ID,
+				'nombre' => $nombre,
+				'apellidos' => $apellidos,
+				'dni' => $dni,
+				'cumpleanos' => $fechanac,
+				'direcion' => $direccion,
+				'telefono' => $telefono,
+				'foto' => $foto,
+				'fecha' => $fecha,
+				'estatus' => $estatus,
+				'referencia' => $referencia
+			);
+		}
+		wp_reset_postdata();
+		wp_reset_query();
+	}
+
+	return $pacientes;
+}
+
+function get_count_pacientes( ) {
+	$pacientes = get_pacientes();
+	return count($pacientes);
+}
+
+
+
 
 
 

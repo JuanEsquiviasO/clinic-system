@@ -30,7 +30,7 @@ if ( isset($_POST['wp-submit']) ) {
 }
 ?>
 <!DOCTYPE html>
-<html dir="ltr" lang="<?php language_attributes[); ?>">
+<html dir="ltr" lang="<?php language_attributes(); ?>">
 
 <head>
 	<meta charset="utf-8">
